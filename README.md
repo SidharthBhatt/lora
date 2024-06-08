@@ -2,7 +2,7 @@ Imagine a wildlife camera that can send images of wildlife entirely through radi
 
 
 
-# More Info
+# PCB ✔
 
 <!-- Describe your board in 2-3 sentences. What are you making? What will it do? -->
 I created a PCB that easily connects a lora module with a sx1278 chip to a rasberry pi 3. This is much better than the jumper wires I prototyped because its much more portable. 
