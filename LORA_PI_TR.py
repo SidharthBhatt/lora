@@ -23,10 +23,11 @@ class LoRaBeacon(LoRa):
         self.set_mode(MODE.STDBY)
         self.clear_irq_flags(TxDone=1)
         sys.stdout.flush()
-        sleep(2)
+        #sleep(2)
         data=input('>>> ')
-        a=[int(hex(ord(m)), 0) for m in data]
-        #set format array data in 1 byte 
+        a=[int(hex(ord(m)), 0) for m in data] *3
+        #set format array data in 1 byte
+        #a = 3
         print(a)
         self.write_payload(a)
         self.set_mode(MODE.TX)
