@@ -1,4 +1,5 @@
 import subprocess
+from subprocess import call
 
 def capture_image(output_path='output.jpg'):
     try:
@@ -13,3 +14,5 @@ def capture_image(output_path='output.jpg'):
 
 if __name__ == "__main__":
     capture_image('webcam_image.jpg')
+    call('split -b 250 webcam_image.jpg index', shell=True)
+    print("debug")
