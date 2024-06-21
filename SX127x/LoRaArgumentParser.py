@@ -45,11 +45,11 @@ class LoRaArgumentParser(argparse.ArgumentParser):
         argparse.ArgumentParser.__init__(self, description=description)
         self.add_argument('--ocp', '-c', dest='ocp', default=100, action="store", type=float,
                           help="Over current protection in mA (45 .. 240 mA)")
-        self.add_argument('--sf', '-s', dest='sf', default=7, action="store", type=int,
+        self.add_argument('--sf', '-s', dest='sf', default=6, action="store", type=int,
                           help="Spreading factor (6...12). Default is 7.")
         self.add_argument('--freq', '-f', dest='freq', default=434., action="store", type=float,
                           help="Frequency")
-        self.add_argument('--bw', '-b', dest='bw', default='BW125', action="store", type=str,
+        self.add_argument('--bw', '-b', dest='bw', default='BW500', action="store", type=str,
                           help="Bandwidth (one of BW7_8 BW10_4 BW15_6 BW20_8 BW31_25 BW41_7 BW62_5 BW125 BW250 BW500).\nDefault is BW125.")
         self.add_argument('--cr', '-r', dest='coding_rate', default='CR4_5', action="store", type=str,
                           help="Coding rate (one of CR4_5 CR4_6 CR4_7 CR4_8).\nDefault is CR4_5.")
