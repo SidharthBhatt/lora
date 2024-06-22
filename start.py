@@ -1,6 +1,7 @@
 import subprocess
 from subprocess import call
-       
+import struct
+
 def capture_image(output_path='webcam_image.jpg'):
     
     # Run the FFmpeg command to capture a single frame from the webcam
@@ -10,14 +11,16 @@ def capture_image(output_path='webcam_image.jpg'):
     ], check=True)
     print(f"Image saved as {output_path}")
     
-    CHUNK_SIZE = 430
+    CHUNK_SIZE = 200
 
     f = open("webcam_image.jpg", 'rb')
     chunk = f.read(CHUNK_SIZE)
     while chunk: #loop until the chunk is empty (the file is exhausted)
         
         chunk = bytearray(f.read(CHUNK_SIZE)) #read the next chunk
-        print(chunk)
+        numbers = list(chunk)
+        print(len(numbers))
+        print("space")
         #for x in chunk:
             #print(x)
     f.close()#open image as byte array
