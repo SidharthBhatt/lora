@@ -3,7 +3,8 @@ from SX127x.LoRa import *
 from SX127x.board_config import BOARD
 
 BOARD.setup()
-
+global img
+img = []
 class LoRaRcvCont(LoRa):
     def __init__(self, verbose=False):
         super(LoRaRcvCont, self).__init__(verbose)
@@ -21,10 +22,12 @@ class LoRaRcvCont(LoRa):
             
 
     def on_rx_done(self):
+        global img
         print("\nReceived: ")
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
         print(payload)
+        img = img + list(payload)
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
         self.set_mode(MODE.RXCONT) 
@@ -43,8 +46,10 @@ except KeyboardInterrupt:
     print("")
     sys.stderr.write("KeyboardInterrupt\n")
 finally:
+    print(test)
     sys.stdout.flush()
     print("")
+    print(img)
     lora.set_mode(MODE.SLEEP)
     BOARD.teardown()
 
