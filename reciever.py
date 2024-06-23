@@ -24,7 +24,7 @@ class LoRaRcvCont(LoRa):
         print("\nReceived: ")
         self.clear_irq_flags(RxDone=1)
         payload = self.read_payload(nocheck=True)
-        print(bytes(payload).decode("utf-8",'ignore'))
+        print(payload)
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
         self.set_mode(MODE.RXCONT) 
