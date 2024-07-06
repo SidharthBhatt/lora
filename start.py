@@ -6,17 +6,21 @@ from time import sleep
 from SX127x.LoRa import *
 from SX127x.board_config import BOARD
 # import the python libraries
-output_path = 'webcam_image.jpg'
-subprocess.run([
-    'ffmpeg', '-f', 'video4linux2', '-i', '/dev/video0',
-    '-vframes', '1', output_path
-], check=True)
-print(f"Image saved as {output_path}")
-    
+
+taking_pic = False
+counter = 0
 #read image with a specified chunk size
 CHUNK_SIZE = 200
-f = open("webcam_image.jpg", 'rb')
-chunk = f.read(CHUNK_SIZE)
+
+output_path = 'webcam_image' + str(counter) + '.jpg'
+subprocess.run(['ffmpeg', '-f', 'video4linux2', '-i', '/dev/video0','-vframes', '1', output_path], check=True)
+print(f"Image saved as {output_path}")
+f = open(f"{output_path}", 'rb')   
+            
+            
+
+ #read the next chunk
+
     
 BOARD.setup()
 # is used to set the board and LoRa parameters
@@ -35,16 +39,46 @@ class LoRaBeacon(LoRa):
         while True:
               sleep(1)
     def on_tx_done(self):
+        global taking_pic
+        global f
+        global CHUNK_SIZE
+        global counter
+        global output_path
+        
         self.set_mode(MODE.STDBY)
         self.clear_irq_flags(TxDone=1)
         sys.stdout.flush()
-        
-        chunk = bytearray(f.read(CHUNK_SIZE)) #read the next chunk
-        numbers = list(chunk)
-        print(len(numbers))
-        self.write_payload(numbers)
-        self.set_mode(MODE.TX)
+        if taking_pic:
             
+            output_path = 'webcam_image' + str(counter) + '.jpg'
+            subprocess.run([
+                'ffmpeg', '-f', 'video4linux2', '-i', '/dev/video0',
+                '-vframes', '1', output_path
+            ], check=True)
+            print(f"Image saved as {output_path}")
+    
+            #read image with a specified chunk size
+            CHUNK_SIZE = 200
+            f = open(output_path, 'rb')
+            taking_pic = False
+            self.set_mode(MODE.TX)
+            
+        else:
+            chunk = bytearray(f.read(CHUNK_SIZE)) #read the next chunk
+            numbers = list(chunk)
+            sleep(0.15)
+            if chunk:
+                print(numbers)
+                self.write_payload(numbers)
+                self.set_mode(MODE.TX)
+            else:
+                payload = [999]
+                print(payload)
+                taking_pic = True
+                counter = counter + 1
+                self.write_payload(payload)
+                self.set_mode(MODE.TX)
+                
 
 
 lora = LoRaBeacon(verbose=False)
