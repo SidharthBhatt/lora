@@ -1,4 +1,9 @@
-Ever gone camping and wondered what animals were around you? Limited cell service, SD cards are too time intensive, and wifi's range is too limited. Introducing a custom trail camera featuring a lora rasberry pi hat PCB and worlds first open source lora video streaming protocol written in python. I literally wrote the code so an image can be converted into bytes, turned into radio frequencies, and subsequently decoded up to 2 miles away. Images take less than a minute to be sent and can be sorted  to see if they contain wildlife with an image variation script I wrote.
+Intro: 
+Ever gone camping and wondered what animals were around you? Limited cell service, SD cards are too time intensive, and wifi's range is too limited. Introducing a custom trail camera featuring a lora rasberry pi hat PCB and worlds first open source lora video streaming protocol written in python. I literally wrote the code so an image can be converted into bytes, turned into radio frequencies, and subsequently decoded up to 2 miles away. Images take less than a minute to be sent and can be sorted with a modified version of PyTorch Wildlife. 
+
+Motivation: 
+Really wanted to do a big project (after doing many small ones) and this one was accessible, interesting, and made the world a better place.
+
 Challenges:
 - didn't know what a pcb was -> learned how to use easyeda
 - first pcb had the wrong ipex connector -> bought new ipex connector
@@ -7,7 +12,10 @@ Challenges:
 - webcam drivers weren't working -> used ffmpeg
 - base64 encoding wasn't working -> used pil library
 - some packets were being missed  -> increased wait time between packets
+
+How it works: 
 ![image](https://github.com/user-attachments/assets/ac3d3119-3e7a-48d1-97f3-02a61beb4206)
+![image](https://github.com/user-attachments/assets/5b674318-ba81-40cc-a534-95e72daca2bd)
 
 
 # PCB ✔
