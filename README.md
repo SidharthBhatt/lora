@@ -15,20 +15,21 @@ Challenges:
 - didn't know ML -> took multivariable calculus, linear algebra, and did workshops with middle schoolers
 - didnt know anything about ML research -> started with YOLO and read original paper & googled everything I didn't know
 
-Summary: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made an innovative product 
+
+
 How it works: 
+
+![image](https://github.com/SidharthBhatt/lora/assets/81537231/c85af4df-c06c-4aa9-a73f-0e79b648be90)
 
 ![image](https://github.com/user-attachments/assets/f6232446-1c0b-4e67-a044-f8bd973873ba)
 
 ![image](https://github.com/user-attachments/assets/9380932b-402d-43e7-a354-f009e1f05b4b)
 
+![image](https://github.com/user-attachments/assets/e0fd9485-2fad-4289-b185-7ba308102eab)
+
 ![image](https://github.com/user-attachments/assets/5b674318-ba81-40cc-a534-95e72daca2bd)
 
-
-# PCB ✔
-
-I created a PCB that easily connects a lora module with a sx1278 chip to a rasberry pi 3. This is much better than the jumper wires I prototyped because its much more portable. 
-![image](https://github.com/SidharthBhatt/lora/assets/81537231/c85af4df-c06c-4aa9-a73f-0e79b648be90)
+Summary: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made an innovative product. 
 
 
 
