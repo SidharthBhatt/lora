@@ -12,7 +12,10 @@ Challenges:
 - webcam drivers weren't working -> used ffmpeg
 - base64 encoding wasn't working -> used pil library
 - some packets were being missed  -> increased wait time between packets
+- didn't know ML -> took multivariable calculus, linear algebra, and did workshops with middle schoolers
+- didnt know anything about ML research -> started with YOLO and read original paper & googled everything I didn't know
 
+Summary: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made an innovative product 
 How it works: 
 
 ![image](https://github.com/user-attachments/assets/f6232446-1c0b-4e67-a044-f8bd973873ba)
