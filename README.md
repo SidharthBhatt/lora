@@ -20,7 +20,7 @@ Really wanted to do a big project (after doing many small ones) and this one was
 TLDR: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made a unique project. 
 
 
-**How it works: **
+**How it works:**
 
 ![image](https://github.com/user-attachments/assets/f6232446-1c0b-4e67-a044-f8bd973873ba)
 
