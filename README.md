@@ -17,7 +17,7 @@ Really wanted to do a big project (after doing many small ones) and this one was
 - didn't know ML -> took multivariable calculus, linear algebra, and did workshops with middle schoolers
 - didnt know anything about ML research -> started with YOLO and read original paper & googled everything I didn't know
 
-TLDR: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made a unique project. 
+**TLDR: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made a unique project.**
 
 
 **How it works:**
