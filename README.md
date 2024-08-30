@@ -14,8 +14,8 @@ Really wanted to do a big project (after doing many small ones) and this one was
 - webcam drivers weren't working -> used ffmpeg
 - base64 encoding wasn't working -> used pil library
 - some packets were being missed  -> increased wait time between packets
-- didn't know ML -> took multivariable calculus, linear algebra, and did workshops with middle schoolers
-- didnt know anything about ML research -> started with YOLO and read original paper & googled everything I didn't know
+- didn't know ML -> took multivariable calculus, linear algebra, and taught middle schoolers ML (teaching others is the best way to learn)
+- didn't know anything about ML research -> started with YOLO and read original paper & googled everything I didn't know
 
 **TLDR: Worked really hard (5k+ lines of code), learned everything from PCB design to ML, and made a unique project.**
 
